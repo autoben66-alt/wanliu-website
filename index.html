@@ -38,7 +38,7 @@
                 lineId: "@306uwyhx", 
                 lineLink: "https://lin.ee/4HMhdv0", 
                 phone: "0983003199",
-                heroImage: "https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/420022164_387713083773068_6625048265526849194_n.png?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=3FVTTzKseboQ7kNvwH-hOD9&_nc_oc=AdkwTRSY5_avZ32tckM1s_J-v_3m8rR05nINStYmllpTFsnOQOqFc_fk6r3dznZB4nc&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=1DycjYBo9t2czs0IDHl85A&oh=00_Afs0Nxl7Q1IpEd3IwKx_Oi6HUqdor3pcyz_Qwv9s-x4ACg&oe=698F73A2",
+                heroImage: "https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/420022164_387713083773068_6625048265526849194_n.png?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=3FVTTzKseboQ7kNvwH-hOD9&_nc_oc=AdkwTRSY5_avZ32tckM1s_J-v_3m8rR05nINStYmllpTFsnOQOqFc_fk6r3dznZB4nc&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=QNcKR6lTNsbL-yJfLlhLCg&oh=00_AfuLkTqzNC96gbXfduJlgzoWo_iJ4HEGso-X2ElOrfgtgg&oe=698E92A2",
                 heroTitle: "灣琉・旅宿系列", 
                 heroSubtitle: "不管你們幾個人，這裡都有適合你的那個「家」。"
             },
@@ -56,6 +56,8 @@
                     description: '全區共有 6 棟獨立 Villa，每棟標準 2 人，可加床至 4 人。適合情侶獨享寧靜，也適合多組家庭包場聚會（全區最多容納 24 位），在陽台輕啜紅酒，看著夕陽落下。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/486525181_667291119148595_2559236994243067725_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5uQkWL4_SM8Q7kNvwE6UTy3&_nc_oc=Adl6R2f7jnkjS8-j4l8WUv_jSXSAvUrqSAtdZd6GsF9ctgpavJS53Jecr8i9qDNwlAI&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=816Enhnabf16Te10O8isvw&oh=00_Afs9sUk8cQbWUH-BByStvUOU7aWJE82FXZfPdeyRL16V0A&oe=698EAFE8',
                     features: ['共6棟獨立Villa', '浪漫海景', '獨立陽台', '戶外BBQ', '百坪庭院', '簡易廚房', '海景戲水池'],
+                    
+                    // 一館試算設定
                     calcConfig: {
                         enabled: true, mode: 'multi_unit', basePaxPerUnit: 2, maxPaxPerUnit: 4, totalUnits: 6,
                         extraPrice: { offSeason: 600, peakSeason: 800 },    
@@ -67,7 +69,8 @@
                         }
                     },
                     roomTypes: [
-                        { name: '標準雙人 Villa', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $3,000 / 假日 $4,000', peakSeason: '平日 $4,500 / 假日 $5,500', note: '含早餐' }
+                        { name: '標準雙人 Villa', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $3,000 / 假日 $4,000', peakSeason: '平日 $4,500 / 假日 $5,500', note: '含早餐' },
+                        { name: '加人費用', range: '全年統一', offSeason: '$600 / 人', peakSeason: '$800 / 人', note: '每棟最多加 2 人' }
                     ],
                     images: [
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/611478167_886353587242346_6268380364309421024_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qMBSc1RxvNoQ7kNvwGu2abv&_nc_oc=Adl7a3hnV82fiQIzmcjPGAeIO2JoMwsLdGpOwDBbvOJ91e6Yk132058_wBt_CZPXfSM&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=gCpIvV1YTyN97jzg33DlNg&oh=00_AfsfLiSJZqTSpw99SgJNS1STkhPLWFLQ8vfgleCiiG3X5Q&oe=698E9B83',
@@ -90,10 +93,21 @@
                     description: '全區共有 6 棟，每棟標準 4 人，可加床至 6 人。不用擔心孩子跑跳會吵到樓下，單棟空間寬敞，全區包場更可容納高達 36 位，是公司員旅或家族大團圓的最佳選擇。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/539774131_784256187452087_3997436012908772817_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=j07NUCOHR9sQ7kNvwEIjHO7&_nc_oc=Adk5m_xllEKP5NmpirbvbshERVUhUsWj0CC34vFxL6zOnF895FNGnJVLiNa-ECxLTAU&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=erMveBFd5nuLl6G00Leogg&oh=00_AftO6tlk6a93WQLQseAqEvmk6xi4I6hRB_324pQhBIqI6A&oe=698EBC80',
                     features: ['共6棟透天', '寬敞客廳', '專屬KTV', '戶外BBQ', '百坪庭院', '獨立陽台', '純白戲水池'],
+                    
+                    // 二館試算設定 (恢復)
+                    calcConfig: {
+                        enabled: true, mode: 'multi_unit', basePaxPerUnit: 4, maxPaxPerUnit: 6, totalUnits: 6,
+                        extraPrice: { offSeason: 800, peakSeason: 1000 }, // 加人費
+                        seasons: {
+                            off_weekday: { label: '淡季平日 (11-3月 週一~五)', price: 4500 },
+                            off_holiday: { label: '淡季假日 (11-3月 週六~日)', price: 6000 },
+                            peak_weekday: { label: '旺季平日 (4-10月 週一~五)', price: 6000 },
+                            peak_holiday: { label: '旺季假日 (4-10月 週六~日)', price: 8000 }
+                        }
+                    },
                     roomTypes: [
                         { name: '歡聚四人棟', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $4,500 / 假日 $6,000', peakSeason: '平日 $6,000 / 假日 $8,000', note: '獨立客廳+KTV' },
-                        { name: '加人費用', range: '全年統一', offSeason: '$800 / 人', peakSeason: '$1000 / 人', note: '每棟最多加 2 人' },
-                        { name: '全區包場 (36人)', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $36,600 / 假日 $48,000', peakSeason: '平日 $45,600 / 假日 $60,000', note: '公司團體首選(每人2000內)' }
+                        { name: '加人費用', range: '全年統一', offSeason: '$800 / 人', peakSeason: '$1,000 / 人', note: '每棟最多加 2 人' },
                     ],
                     images: [
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t51.82787-15/612206642_18038640122721891_7727729527724658292_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5yafZ39LWg8Q7kNvwESR5Ou&_nc_oc=Adk1X6kHLzxgAcQ82APTOrJNRVcT1id2VgPP__HJfYZ_b8mF0NJ5eWShHj1ZA4fzyAg&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=QLY-M82aaW4yOOOJzVpzLA&oh=00_Afu6LD3XYO7MubpP5-tYMgVj9ctLgkHJ8UME3ygpI4O4KQ&oe=698E8F83', 
@@ -116,9 +130,22 @@
                     description: '專為重視隱私的家族設計。擁有獨立的庭院可以烤肉，像回到老家一樣放鬆。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/622740630_904425528768485_762830311926185488_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S-0Fgo25ntMQ7kNvwH_t_4P&_nc_oc=AdmReMrKnJZwuVtdGlU9h3yglJ6VaDEKwW6DqLtkK-HcCA0HaSFcf5Ij1cDTyh9LUd4&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=ZhN08o8eIh3N9w444azU2Q&oh=00_Afv8q7eV3Zl0hhC-V5U4ixM4N3ou3A3LxMVJI0V1YWBSww&oe=698EA80D',
                     features: ['獨立庭院', '可烤肉', '溫馨客廳', '隱私包棟', '三房一廳一庭院', '歡唱KTV', '麻將空間'],
+                    
+                    // 私宅試算設定 (恢復)
+                    calcConfig: {
+                        enabled: true, mode: 'single_unit', basePax: 6, maxPax: 12,
+                        extraPrice: 1000,    
+                        seasons: {
+                            off_weekday: { label: '淡季平日 (11-3月 週一~五)', price: 9000 },
+                            off_holiday: { label: '淡季假日 (11-3月 週六~日)', price: 12000 },
+                            peak_weekday: { label: '旺季平日 (4-10月 週一~五)', price: 12000 },
+                            peak_holiday: { label: '旺季假日 (4-10月 週六~日)', price: 15000 }
+                        }
+                    },
                     roomTypes: [
-                        { name: '獨棟私宅 (6人包棟)可加至12人', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $9,000 / 假日 $12,000', peakSeason: '平日 $12,000 / 假日 $15,000', note: '每日僅接待一組' },
-                        { name: '加人費用 (第7位起)', range: '全年統一', offSeason: '$1,000 / 人', peakSeason: '$1,000 / 人', note: '至多加至12人' }
+                        { name: '獨棟私宅 (6人包棟)', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $9,000 / 假日 $12,000', peakSeason: '平日 $12,000 / 假日 $15,000', note: '每日僅接待一組' },
+                        { name: '加人費用 (第7位起)', range: '全年統一', offSeason: '$1,000 / 人', peakSeason: '$1,000 / 人', note: '至多加至12人' },
+                        { name: '續住優惠', range: '全年統一', offSeason: '9折', peakSeason: '9折', note: '第二晚起' }
                     ],
                     images: [
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/623181269_904425442101827_6203945673928648558_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=MxOQqTMi_2wQ7kNvwH5GX40&_nc_oc=AdmuWcjpzTwmkMsDUEG_2IaFhwNJo2csPKGz_shP31GiilWRSR5AcSLT_maWU0nIGnY&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=_cEEqyrx_zNu7xYzuxPO_Q&oh=00_AftqPcHlac8QQ2y4Qm3rAdSWvrSSY5QMbWsbwbHdNTzNFQ&oe=698E98D4',
@@ -141,8 +168,10 @@
                     description: '大學畢旅、公司 Team Building 的首選！大家睡在一起、玩在一起、唱再一起，這才是出遊真正的意義。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/497823835_122136432470405577_8457257598022893280_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=S1frGKFRZrYQ7kNvwHNj2j-&_nc_oc=AdnZiV08MPAtPne-kj0ao-bqMYjkZ399s9aVE1EcNMeUTx0SHLsJzqlWDOX4RLX0hbk&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=NxXjt8tRhD1uAqMDJAMZ8w&oh=00_AfvCWS4a_QYjQ8fuoZA19jFl4cMWLAyBcnvZUakEgd8RGg&oe=698E99D0',
                     features: ['超大交誼廳', '高CP值', '24床位', '適合畢旅', '歡唱KTV', '多間衛浴'],
+                    
+              
                     roomTypes: [
-                        { name: '單人床位', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $800 / 假日 $1,000', peakSeason: '平日 $900 / 假日 $1,100', note: '含個人置物櫃' },
+                        { name: '單人床位', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $600 / 假日 $800', peakSeason: '平日 $800 / 假日 $1,000', note: '含個人置物櫃' },
                         { name: '小包棟 (8至14床)', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $6,000 / 假日 $8,000', peakSeason: '平日 $10,000 / 假日 $12,000', note: '好友獨享大空間' },
                         { name: '全館包棟 (15至24床)', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $12,000 / 假日 $15,000', peakSeason: '平日 $15,000 / 假日 $18,000', note: '含交誼廳大螢幕' }
                     ],
@@ -266,7 +295,7 @@
 
         const PriceCalculator = ({ config }) => {
             const [season, setSeason] = useState('off_weekday');
-            const [pax, setPax] = useState(config.basePaxPerUnit || 2);
+            const [pax, setPax] = useState(config.basePaxPerUnit || config.basePax || 2);
             const [unitCount, setUnitCount] = useState(1);
             useEffect(() => {
                 if (config.mode === 'multi_unit') {
@@ -283,7 +312,16 @@
                 totalPrice = (unitCount * basePrice) + (extraPax * extraP);
                 note = `使用 ${unitCount} 棟 + 加 ${extraPax} 床`;
             } else {
-                totalPrice = basePrice + (Math.max(0, pax - config.basePax) * config.extraPrice);
+                // single_unit mode
+                const extraPax = Math.max(0, pax - config.basePax);
+                // Handle split extra price or flat extra price
+                let extraP = 0;
+                if (typeof config.extraPrice === 'object') {
+                     extraP = season.includes('peak') ? config.extraPrice.peakSeason : config.extraPrice.offSeason;
+                } else {
+                     extraP = config.extraPrice;
+                }
+                totalPrice = basePrice + (extraPax * extraP);
             }
             return (
                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-8 shadow-sm">
@@ -293,17 +331,17 @@
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div><label className="block text-sm font-bold text-gray-700 mb-2">2. 總人數 ({pax}人)</label>
                                 <div className="flex items-center gap-3">
-                                    <button onClick={() => setPax(Math.max(2, pax-1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">-</button>
+                                    <button onClick={() => setPax(Math.max((config.basePaxPerUnit || config.basePax), pax - 1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">-</button>
                                     <div className="flex-1 text-center font-bold text-xl bg-white py-2 rounded-lg border border-gray-200 text-blue-800">{pax} 人</div>
-                                    <button onClick={() => setPax(Math.min(36, pax+1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">+</button>
+                                    <button onClick={() => setPax(Math.min((config.mode === 'multi_unit' ? config.totalUnits * config.maxPaxPerUnit : config.maxPax), pax + 1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">+</button>
                                 </div>
                             </div>
                             {config.mode === 'multi_unit' && (
                                 <div><label className="block text-sm font-bold text-gray-700 mb-2">3. 使用棟數</label>
                                     <div className="flex items-center gap-3">
-                                        <button onClick={() => setUnitCount(Math.max(Math.ceil(pax/4), unitCount-1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">-</button>
+                                        <button onClick={() => setUnitCount(Math.max(Math.ceil(pax/config.maxPaxPerUnit), unitCount-1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">-</button>
                                         <div className="flex-1 text-center font-bold text-xl bg-white py-2 rounded-lg border border-gray-200 text-blue-800">{unitCount} 棟</div>
-                                        <button onClick={() => setUnitCount(Math.min(6, unitCount+1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">+</button>
+                                        <button onClick={() => setUnitCount(Math.min(config.totalUnits, unitCount+1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">+</button>
                                     </div>
                                 </div>
                             )}
@@ -407,7 +445,32 @@
                                         <h1 className="text-4xl font-bold mb-4">{p.name}</h1>
                                         <p className="text-xl text-blue-600 italic mb-6">"{p.slogan}"</p>
                                         <p className="text-gray-600 mb-8">{p.description}</p>
-                                        {p.calcConfig.enabled && <PriceCalculator config={p.calcConfig} />}
+                                        {/* 👇 修正：加上安全檢查，避免未設定試算機的房型導致當機 */}
+                                        {p.calcConfig && p.calcConfig.enabled && <PriceCalculator config={p.calcConfig} />}
+                                        
+                                        {/* ⬇️ 靜態房型列表 (正確顯示在試算機下方) */}
+                                        {p.roomTypes && p.roomTypes.length > 0 && (
+                                            <div className="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-100">
+                                                <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-blue-600" /> 房型與價格總表</h4>
+                                                <div className="space-y-4">
+                                                    {p.roomTypes.map((room, idx) => (
+                                                        <div key={idx} className="border-b border-gray-200 pb-4 last:border-0 last:pb-0">
+                                                            <div className="flex justify-between items-center mb-2">
+                                                                <div className="font-bold text-gray-800 text-lg">{room.name}</div>
+                                                                {room.note && <div className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded">{room.note}</div>}
+                                                            </div>
+                                                            {room.offSeason ? (
+                                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                                                                    <div className="bg-white p-3 rounded-lg border border-gray-100"><div className="text-gray-500 text-xs mb-1">淡季 ({room.range ? room.range.split('/')[0] : '平日'})</div><div className="font-bold text-gray-700">{room.offSeason}</div></div>
+                                                                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-100"><div className="text-blue-500 text-xs mb-1">旺季 ({room.range ? room.range.split('/')[1] : '假日'})</div><div className="font-bold text-blue-700">{room.peakSeason}</div></div>
+                                                                </div>
+                                                            ) : (<div className="font-bold text-red-500 text-right">{room.price}</div>)}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+
                                         <div className="flex gap-4"><button onClick={() => openInquiry(p.name)} className="flex-1 bg-blue-600 text-white py-4 rounded-xl font-bold text-lg">立即私訊優惠</button></div>
                                     </div>
                                 </div>
