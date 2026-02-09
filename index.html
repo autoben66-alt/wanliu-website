@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 👇 新增：關鍵的 Meta 標籤 (社群分享設定) -->
+    <!-- 👇 新增：關鍵的 Meta 標籤 (社群分享設定) - 已優化圖片尺寸 -->
     <meta property="og:title" content="灣琉・小琉球全方位旅宿 | 您的海島嚮導">
     <meta property="og:description" content="不管你們幾個人，這裡都有適合你的那個「家」。從2人甜蜜情侶到36人大型團體，提供最舒適的住宿、星空BBQ與一條龍套裝行程。">
     
-    <!-- ⚠️ 重要修正：FB 的圖片連結 (scontent...) 容易被阻擋導致無縮圖。 -->
-    <!-- 已先替換為穩定的示意圖連結。若需使用自己的照片，請將照片上傳至 Imgur 等圖床取得永久連結後替換。 -->
-    <meta property="og:image" content="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2088">
-    
-    <meta property="og:url" content="https://bayliu.vercel.app"> <!-- 上線後，請將此處網址確認為您的實際網址 -->
+    <!-- ⚠️ 使用 1200x630 標準比例的 Unsplash 圖片，確保 FB/LINE 抓取成功 -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=1200&h=630&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
 
     <!-- 加強 LINE/Twitter 的顯示支援 -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="灣琉・小琉球全方位旅宿">
     <meta name="twitter:description" content="不管你們幾個人，這裡都有適合你的那個「家」。從2人甜蜜情侶到36人大型團體，提供最舒適的住宿。">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2088">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=1200&h=630&fit=crop">
     <!-- 👆 Meta 設定結束 -->
 
     <title>灣琉・小琉球全方位旅宿</title>
@@ -98,7 +97,7 @@
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/594065846_861071896437182_1157049483374796182_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=SngXQe85bpgQ7kNvwHIFxFD&_nc_oc=AdluTKLCgZPwyOwQMnljg7llSHHumP9invgCB08c478Dpl_tPVKNTnyQEekIIVZlKlY&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=IiP7RIfFHU1TAfObAkPPDw&oh=00_AfsVc2TmpVk5rNgVY8UvWaQxStHyL9RsoMcgfweRN1G_hg&oe=698E9AD6',
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/480958814_643913258153048_3757717782875946976_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EbEZqhnKYQIQ7kNvwExWfut&_nc_oc=AdnB5ZxuGCz6bvHm-cDdemOm2_v0vi4dS2U7hmL9YTtYwbaJJ4Ynya6GuEVyx2VI2JA&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=lq_y23O0FzouqpMV-pp5AA&oh=00_AfuT0sn9WvYyhEievHtoaMN_ddZSGQKK7ZpgUVYvrs5dzw&oe=698EA4EC',
                     ],
-                    details: { view: true, ktv: false, bbq: true, pool: true, }
+                    details: { view: true, ktv: false, bbq: true, pool: true,  }
                 },
                 {
                     id: 'hall2',
@@ -166,7 +165,7 @@
                         { name: '加人費用 (第7位起)', range: '全年統一', offSeason: '$1,000 / 人', peakSeason: '$1,000 / 人', note: '至多加至12人' }
                     ],
                     images: [
-                        'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/623181269_904425442101827_6203945673928648558_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=MxOQqTMi_2wQ7kNvwH5GX40&_nc_oc=AdmuWcjpzTwmkMsDUEG_2IaFhwNJo2csPKGz_shP31GiilWRSR5AcSLT_maWU0nIGnY&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=bzXz7xAu_u7IA1uNIFQ-nQ&oh=00_AfufDlvzxlz1rik5zL5MAEwX2L7EYN3RUPe9RZvPZHsvLg&oe=698FB214',
+                        'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/623181269_904425528768485_762830311926185488_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=MxOQqTMi_2wQ7kNvwH5GX40&_nc_oc=AdmuWcjpzTwmkMsDUEG_2IaFhwNJo2csPKGz_shP31GiilWRSR5AcSLT_maWU0nIGnY&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=_cEEqyrx_zNu7xYzuxPO_Q&oh=00_AftqPcHlac8QQ2y4Qm3rAdSWvrSSY5QMbWsbwbHdNTzNFQ&oe=698E98D4',
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/622700564_904425478768490_1248060731980742069_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3uf9Lrn3tsIQ7kNvwHXj48w&_nc_oc=AdlDnY9dXPQpPGmtnUHHkhNugcCZCLKGIPYYsk4V6bH0bnw3n3RB_jioScyG4EspIzo&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=Di02WH_LfUAlJGG7xNi8TQ&oh=00_Afvg2LyH7wC9Bt0fMGSkqPVJzQn1R9xX4Dj4xhL3LVrQ0Q&oe=698E9676',
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/623851997_904425412101830_4248264636802254813_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Urd9h3UWmgYQ7kNvwHm-FtE&_nc_oc=Adnm9IAVNXM2EdjADxGTz_ttBKvEe4zbBSfTgdnhMXFKzISwFjxu02GXouvcLzIrdc0&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=hCIr-oXWv--mYn6TzVa4RA&oh=00_AftdYH8tgdlSStQeXKRhH3jIJK_mu9CbDOFpjcq_nQYKLA&oe=698E95E0',
                         'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/622388123_904425518768486_5032103192849792864_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vBa3qeFkbvAQ7kNvwED3xKS&_nc_oc=Admc5d-B2GmnkaotIOG3PSJJg4yUWRlIQYcd_E8AGg4B2BeD2c1CP2daYq2YmGCmzJI&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=KfPRbfSGqN55EDHO90qKQQ&oh=00_Afs8T3quNGSZNDpZyQWA1t46-iMNkwoFOO2du2Fn3uFx_g&oe=698EBBAD',
