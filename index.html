@@ -14,12 +14,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; }
         html { scroll-behavior: smooth; }
-        .hero-bg { background-size: cover; background-position: center; }
+        .hero-bg { background-size: cover; background-position: center; background-attachment: fixed; }
         /* Modal Animation */
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .modal-overlay { animation: fadeIn 0.3s ease-out; }
         .modal-content { animation: slideUp 0.3s ease-out; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out; }
     </style>
 </head>
 <body>
@@ -55,14 +56,8 @@
                     description: '全區共有 6 棟獨立 Villa，每棟標準 2 人，可加床至 4 人。適合情侶獨享寧靜，也適合多組家庭包場聚會（全區最多容納 24 位），在陽台輕啜紅酒，看著夕陽落下。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/486525181_667291119148595_2559236994243067725_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5uQkWL4_SM8Q7kNvwE6UTy3&_nc_oc=Adl6R2f7jnkjS8-j4l8WUv_jSXSAvUrqSAtdZd6GsF9ctgpavJS53Jecr8i9qDNwlAI&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=816Enhnabf16Te10O8isvw&oh=00_Afs9sUk8cQbWUH-BByStvUOU7aWJE82FXZfPdeyRL16V0A&oe=698EAFE8',
                     features: ['共6棟獨立Villa', '浪漫海景', '獨立陽台', '戶外BBQ', '百坪庭院', '簡易廚房', '海景戲水池'],
-                    
-                    // ⬇️ 房價試算設定 (更新為多棟模式 + 淡旺季加人費)
                     calcConfig: {
-                        enabled: true, 
-                        mode: 'multi_unit', 
-                        basePaxPerUnit: 2, 
-                        maxPaxPerUnit: 4, 
-                        totalUnits: 6,
+                        enabled: true, mode: 'multi_unit', basePaxPerUnit: 2, maxPaxPerUnit: 4, totalUnits: 6,
                         extraPrice: { offSeason: 600, peakSeason: 800 },    
                         seasons: {
                             off_weekday: { label: '淡季平日 (11-3月 週一~五)', price: 3000 },
@@ -71,8 +66,6 @@
                             peak_holiday: { label: '旺季假日 (4-10月 週六~日)', price: 5500 }
                         }
                     },
-
-                    // ⬇️ 靜態顯示用的房型表
                     roomTypes: [
                         { name: '標準雙人 Villa', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $3,000 / 假日 $4,000', peakSeason: '平日 $4,500 / 假日 $5,500', note: '含早餐' }
                     ],
@@ -145,8 +138,8 @@
                     capacity: '8-24人',
                     price: 'NT$ 800 /床',
                     icon: 'star',
-                    slogan: '一群人的狂歡！從 8 人到 24 人，裝得下所有的青春與瘋狂。',
-                    description: '大學畢旅、公司 Team Building 的首選！不用拆散住不同棟，大家睡在一起、玩在一起、唱再一起，這才是出遊真正的意義。',
+                    slogan: '一群人的狂歡！裝得下所有的青春與瘋狂。',
+                    description: '大學畢旅、公司 Team Building 的首選！大家睡在一起、玩在一起、唱再一起，這才是出遊真正的意義。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/497823835_122136432470405577_8457257598022893280_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=S1frGKFRZrYQ7kNvwHNj2j-&_nc_oc=AdnZiV08MPAtPne-kj0ao-bqMYjkZ399s9aVE1EcNMeUTx0SHLsJzqlWDOX4RLX0hbk&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=NxXjt8tRhD1uAqMDJAMZ8w&oh=00_AfvCWS4a_QYjQ8fuoZA19jFl4cMWLAyBcnvZUakEgd8RGg&oe=698E99D0',
                     features: ['超大交誼廳', '高CP值', '24床位', '適合畢旅', '歡唱KTV', '多間衛浴'],
                     roomTypes: [
@@ -181,20 +174,6 @@
             // 4. 烤肉菜單設定 (新功能)
             bbqMenu: [
                 {
-                    title: "3-4人份 牛肉套餐",
-                    price: "NT$ 2,400",
-                    unit: "/組",
-                    icon: "utensils",
-                    desc: "穀飼牛肋串(6入)、紐約客牛肉串(6入)、手打牛肉丸串(6入)、韓式牛肉盤(230g)、切塊香料骰子牛(200g)、美國雪花牛肉片(300g)、美國帶骨牛小排(250g)、香料板腱牛排(200g) (含烤肉醬、胡椒鹽)"
-                },
-                {
-                    title: "3-4人份 海鮮套餐",
-                    price: "NT$ 2,800",
-                    unit: "/組",
-                    icon: "anchor",
-                    desc: "船凍冰鮮透抽(3入)、台灣白蝦(600g)、薄鹽鯖魚片(160g)、香料海鮮盤(250g)、半殼大扇貝(1000g)、日本宮城生蠔(800g)、宜蘭抱卵母香魚(2入)、阿根廷大魷魚串(4入) (含烤肉醬、胡椒鹽)"
-                },
-                {
                     title: "3-4人份 串燒套餐",
                     price: "NT$ 2,200",
                     unit: "/組",
@@ -209,66 +188,46 @@
                     desc: "手工香腸(6入)、梅花豬肉串(6入)、脆皮肥腸串(6入)、豬五花肉片(250g)、酒製豬燒肉(230g)、舒肥味噌松阪豬(250g)、舒肥蒜香鹹豬肉(290g)、黑蜜厚切豬里肌(5片) (含烤肉醬、胡椒鹽)"
                 },
                 {
+                    title: "3-4人份 牛肉套餐",
+                    price: "NT$ 2,400",
+                    unit: "/組",
+                    icon: "utensils",
+                    desc: "穀飼牛肋串(6入)、紐約客牛肉串(6入)、手打牛肉丸串(6入)、韓式牛肉盤(230g)、切塊香料骰子牛(200g)、美國雪花牛肉片(300g)、美國帶骨牛小排(250g)、香料板腱牛排(200g) (含烤肉醬、胡椒鹽)"
+                },
+                {
+                    title: "3-4人份 海鮮套餐",
+                    price: "NT$ 2,800",
+                    unit: "/組",
+                    icon: "anchor",
+                    desc: "船凍冰鮮透抽(3入)、台灣白蝦(600g)、薄鹽鯖魚片(160g)、香料海鮮盤(250g)、半殼大扇貝(1000g)、日本宮城生蠔(800g)、宜蘭抱卵母香魚(2入)、阿根廷大魷魚串(4入) (含烤肉醬、胡椒鹽)"
+                },
+                {
                     title: "租借瓦斯烤肉爐",
                     price: "NT$ 500",
                     unit: "/晚",
-                    icon: "fire", // Using a fallback icon name or ensuring 'fire' is handled
-                    desc: "輕鬆烤肉不費力，含瓦斯桶"
+                    icon: "fire",
+                    desc: "輕鬆烤肉不費力，包含瓦斯罐與清潔維護。"
                 }
             ]
         };
 
-        // ==========================================
-        // 🛑 程式邏輯區 (非工程師建議不要動下面) 🛑
-        // ==========================================
-
         const { useState, useEffect } = React;
+
         const Icon = ({ name, className }) => {
-            if (name === 'heart') return <i data-lucide="heart" className={className}></i>;
-            if (name === 'mic') return <i data-lucide="mic" className={className}></i>;
-            if (name === 'home') return <i data-lucide="home" className={className}></i>;
-            if (name === 'star') return <i data-lucide="star" className={className}></i>;
-            if (name === 'map-pin') return <i data-lucide="map-pin" className={className}></i>;
-            if (name === 'phone') return <i data-lucide="phone" className={className}></i>;
-            if (name === 'check') return <i data-lucide="check" className={className}></i>;
-            if (name === 'x') return <i data-lucide="x" className={className}></i>;
-            if (name === 'ship') return <i data-lucide="ship" className={className}></i>;
-            if (name === 'bike') return <i data-lucide="bike" className={className}></i>;
-            if (name === 'search') return <i data-lucide="search" className={className}></i>;
-            if (name === 'map') return <i data-lucide="map" className={className}></i>;
-            if (name === 'utensils') return <i data-lucide="utensils" className={className}></i>;
-            if (name === 'key') return <i data-lucide="key" className={className}></i>;
-            if (name === 'music') return <i data-lucide="music" className={className}></i>;
-            if (name === 'anchor') return <i data-lucide="anchor" className={className}></i>;
-            if (name === 'fire') return <i data-lucide="flame" className={className}></i>;
-            if (name === 'menu') return <i data-lucide="menu" className={className}></i>;
-            // 👇 新增圖示支援
-            if (name === 'moon') return <i data-lucide="moon" className={className}></i>;
-            if (name === 'waves') return <i data-lucide="waves" className={className}></i>;
-            return null;
+            const icons = {
+                heart: 'heart', mic: 'mic', home: 'home', star: 'star', 'map-pin': 'map-pin', phone: 'phone',
+                check: 'check', x: 'x', ship: 'ship', bike: 'bike', search: 'search', map: 'map', utensils: 'utensils',
+                key: 'key', music: 'music', anchor: 'anchor', fire: 'flame', menu: 'menu', moon: 'moon', waves: 'waves'
+            };
+            return <i data-lucide={icons[name] || 'circle'} className={className}></i>;
         };
 
-        // ⬇️ 新增：詢價需求單元件
         const InquiryModal = ({ isOpen, onClose, lineLink, defaultHall }) => {
             if (!isOpen) return null;
-
-            const [formData, setFormData] = useState({
-                name: '',
-                phone: '',
-                date: '',
-                pax: '',
-                budget: '',
-                hall: defaultHall || '',
-                notes: ''
-            });
-
+            const [formData, setFormData] = useState({ name: '', phone: '', date: '', pax: '', budget: '', hall: defaultHall || '', notes: '' });
             const handleSubmit = (e) => {
                 e.preventDefault();
-                
-                // 產生複製文字
-                const textToCopy = `【灣琉民宿詢問單】\n詢問館別/項目：${formData.hall}\n姓名：${formData.name}\n電話：${formData.phone}\n日期：${formData.date}\n人數：${formData.pax}位\n預算：$${formData.budget}/人\n備註：${formData.notes}\n----------------\n請協助確認空房與報價，謝謝！`;
-
-                // 複製到剪貼簿 (相容性寫法)
+                const textToCopy = `【灣琉民宿詢問單】\n詢問項目：${formData.hall}\n姓名：${formData.name}\n電話：${formData.phone}\n日期：${formData.date}\n人數：${formData.pax}位\n預算：$${formData.budget}/人\n備註：${formData.notes}\n----------------\n請協助確認空房與報價，謝謝！`;
                 const textArea = document.createElement("textarea");
                 textArea.value = textToCopy;
                 document.body.appendChild(textArea);
@@ -278,63 +237,28 @@
                     alert('需求單已複製！即將為您開啟 Line...');
                     window.open(lineLink, '_blank');
                     onClose();
-                } catch (err) {
-                    console.error('無法複製', err);
-                    alert('複製失敗，請手動複製後前往 Line');
-                }
+                } catch (err) { alert('複製失敗，請手動複製後前往 Line'); }
                 document.body.removeChild(textArea);
             };
-
             return (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm modal-overlay" onClick={onClose}></div>
                     <div className="bg-white rounded-2xl w-full max-w-md p-6 relative z-10 shadow-2xl modal-content max-h-[90vh] overflow-y-auto">
-                        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                            <Icon name="x" className="w-6 h-6" />
-                        </button>
-                        
-                        <div className="text-center mb-6">
-                            <h3 className="text-2xl font-bold text-gray-800">私訊優惠詢價</h3>
-                            <p className="text-sm text-gray-500 mt-1">填寫需求後將自動複製，方便您在 Line 貼上</p>
-                        </div>
-
+                        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><Icon name="x" className="w-6 h-6" /></button>
+                        <div className="text-center mb-6"><h3 className="text-2xl font-bold text-gray-800">私訊優惠詢價</h3><p className="text-sm text-gray-500 mt-1">填寫需求後將自動複製</p></div>
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-1">詢問館別/項目</label>
-                                <input type="text" value={formData.hall} onChange={e => setFormData({...formData, hall: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg bg-gray-50" placeholder="例如：一館 / 二館 / 烤肉套餐" required />
+                            <div><label className="block text-sm font-bold text-gray-700 mb-1">詢問項目</label><input type="text" value={formData.hall} onChange={e => setFormData({...formData, hall: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg bg-gray-50" required /></div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div><label className="block text-sm font-bold text-gray-700 mb-1">姓名</label><input type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" required /></div>
+                                <div><label className="block text-sm font-bold text-gray-700 mb-1">電話</label><input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" /></div>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-1">聯絡人姓名</label>
-                                    <input type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" placeholder="王小明" required />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-1">聯絡電話</label>
-                                    <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" placeholder="09xx..." />
-                                </div>
+                                <div><label className="block text-sm font-bold text-gray-700 mb-1">日期</label><input type="date" value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" required /></div>
+                                <div><label className="block text-sm font-bold text-gray-700 mb-1">人數</label><input type="number" value={formData.pax} onChange={e => setFormData({...formData, pax: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" required /></div>
                             </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-1">預計日期</label>
-                                    <input type="date" value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" required />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-1">預計人數</label>
-                                    <input type="number" value={formData.pax} onChange={e => setFormData({...formData, pax: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" placeholder="例如：6" required />
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-1">每人預算 (約略)</label>
-                                <input type="text" value={formData.budget} onChange={e => setFormData({...formData, budget: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" placeholder="例如：2500" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-1">備註需求 (選填)</label>
-                                <textarea value={formData.notes} onChange={e => setFormData({...formData, notes: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg h-24" placeholder="例如：想烤肉、需代訂船票、有壽星..."></textarea>
-                            </div>
-                            
-                            <button type="submit" className="w-full bg-[#06C755] text-white py-3 rounded-xl font-bold text-lg hover:bg-[#05a546] transition-colors shadow-lg flex items-center justify-center gap-2">
-                                複製內容並前往 Line <Icon name="check" className="w-5 h-5" />
-                            </button>
+                            <div><label className="block text-sm font-bold text-gray-700 mb-1">預算/人</label><input type="text" value={formData.budget} onChange={e => setFormData({...formData, budget: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg" /></div>
+                            <div><label className="block text-sm font-bold text-gray-700 mb-1">備註</label><textarea value={formData.notes} onChange={e => setFormData({...formData, notes: e.target.value})} className="w-full p-3 border border-gray-200 rounded-lg h-24"></textarea></div>
+                            <button type="submit" className="w-full bg-[#06C755] text-white py-3 rounded-xl font-bold text-lg hover:bg-[#05a546] transition-colors shadow-lg flex items-center justify-center gap-2">複製並前往 Line <Icon name="check" className="w-5 h-5" /></button>
                         </form>
                     </div>
                 </div>
@@ -343,75 +267,44 @@
 
         const PriceCalculator = ({ config }) => {
             const [season, setSeason] = useState('off_weekday');
-            const [pax, setPax] = useState(config.basePaxPerUnit || config.basePax);
+            const [pax, setPax] = useState(config.basePaxPerUnit || 2);
             const [unitCount, setUnitCount] = useState(1);
-
             useEffect(() => {
                 if (config.mode === 'multi_unit') {
-                    const minUnitsNeeded = Math.ceil(pax / config.maxPaxPerUnit);
-                    if (unitCount < minUnitsNeeded) {
-                        setUnitCount(minUnitsNeeded);
-                    }
+                    const minUnits = Math.ceil(pax / config.maxPaxPerUnit);
+                    if (unitCount < minUnits) setUnitCount(minUnits);
                 }
             }, [pax, config.mode, config.maxPaxPerUnit]);
-
             let totalPrice = 0;
             let note = "";
-
-            const basePricePerUnit = config.seasons[season].price;
-
+            const basePrice = config.seasons[season].price;
             if (config.mode === 'multi_unit') {
-                const costUnits = unitCount * basePricePerUnit;
-                const baseCapacity = unitCount * config.basePaxPerUnit;
-                const extraPax = Math.max(0, pax - baseCapacity);
-                
-                let extraPricePerPerson = config.extraPrice;
-                if (typeof config.extraPrice === 'object') {
-                    const isPeak = season.indexOf('peak') !== -1;
-                    extraPricePerPerson = isPeak ? config.extraPrice.peakSeason : config.extraPrice.offSeason;
-                }
-
-                const costExtra = extraPax * extraPricePerPerson;
-                totalPrice = costUnits + costExtra;
-                note = `使用 ${unitCount} 棟 (每棟 ${config.basePaxPerUnit} 人) + 加 ${extraPax} 床`;
+                const extraPax = Math.max(0, pax - (unitCount * config.basePaxPerUnit));
+                const extraP = season.includes('peak') ? config.extraPrice.peakSeason : config.extraPrice.offSeason;
+                totalPrice = (unitCount * basePrice) + (extraPax * extraP);
+                note = `使用 ${unitCount} 棟 + 加 ${extraPax} 床`;
             } else {
-                const basePrice = config.seasons[season].price;
-                const extraCharge = (pax - config.basePax) * config.extraPrice;
-                totalPrice = basePrice + extraCharge;
+                totalPrice = basePrice + (Math.max(0, pax - config.basePax) * config.extraPrice);
             }
-
             return (
                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-8 shadow-sm">
-                    <h4 className="font-bold text-lg mb-4 text-blue-800 flex items-center gap-2">
-                        <span className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">?</span>
-                        房價快速試算
-                    </h4>
-                    
+                    <h4 className="font-bold text-lg mb-4 text-blue-800 flex items-center gap-2"><span className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">?</span>房價快速試算</h4>
                     <div className="space-y-6">
-                        <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2">1. 選擇入住時段</label>
-                            <select value={season} onChange={(e) => setSeason(e.target.value)} className="w-full p-3 border border-blue-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                {Object.entries(config.seasons).map(([key, val]) => (
-                                    <option key={key} value={key}>{val.label}</option>
-                                ))}
-                            </select>
-                        </div>
+                        <div><label className="block text-sm font-bold text-gray-700 mb-2">1. 入住時段</label><select value={season} onChange={e => setSeason(e.target.value)} className="w-full p-3 border border-blue-200 rounded-lg bg-white">{Object.entries(config.seasons).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}</select></div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">2. 總人數 ({pax}人)</label>
+                            <div><label className="block text-sm font-bold text-gray-700 mb-2">2. 總人數 ({pax}人)</label>
                                 <div className="flex items-center gap-3">
-                                    <button onClick={() => setPax(Math.max((config.basePaxPerUnit || config.basePax), pax - 1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 font-bold text-xl text-gray-600">-</button>
+                                    <button onClick={() => setPax(Math.max(2, pax-1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">-</button>
                                     <div className="flex-1 text-center font-bold text-xl bg-white py-2 rounded-lg border border-gray-200 text-blue-800">{pax} 人</div>
-                                    <button onClick={() => setPax(Math.min((config.mode === 'multi_unit' ? config.totalUnits * config.maxPaxPerUnit : config.maxPax), pax + 1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 font-bold text-xl text-gray-600">+</button>
+                                    <button onClick={() => setPax(Math.min(36, pax+1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">+</button>
                                 </div>
                             </div>
                             {config.mode === 'multi_unit' && (
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-2">3. 預計使用棟數</label>
+                                <div><label className="block text-sm font-bold text-gray-700 mb-2">3. 使用棟數</label>
                                     <div className="flex items-center gap-3">
-                                        <button onClick={() => setUnitCount(Math.max(1, unitCount - 1))} disabled={unitCount <= Math.ceil(pax / config.maxPaxPerUnit)} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed font-bold text-xl text-gray-600">-</button>
+                                        <button onClick={() => setUnitCount(Math.max(Math.ceil(pax/4), unitCount-1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">-</button>
                                         <div className="flex-1 text-center font-bold text-xl bg-white py-2 rounded-lg border border-gray-200 text-blue-800">{unitCount} 棟</div>
-                                        <button onClick={() => setUnitCount(Math.min(config.totalUnits, unitCount + 1))} disabled={unitCount >= config.totalUnits} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed font-bold text-xl text-gray-600">+</button>
+                                        <button onClick={() => setUnitCount(Math.min(6, unitCount+1))} className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center font-bold text-xl text-gray-600">+</button>
                                     </div>
                                     <div className="text-xs text-gray-500 mt-1 text-center">{Math.ceil(pax / config.maxPaxPerUnit) > unitCount ? "人數過多，請增加棟數" : "可依需求增加棟數以提升舒適度"}</div>
                                 </div>
@@ -433,282 +326,155 @@
         const App = () => {
             const [activeTab, setActiveTab] = useState('home');
             const [isMenuOpen, setIsMenuOpen] = useState(false);
-            const [isInquiryOpen, setIsInquiryOpen] = useState(false); // Modal state
-            const [inquiryHall, setInquiryHall] = useState(''); // Hall for modal
-            const { info, properties, addOnItems, bbqMenu } = WEBSITE_DATA; // Added bbqMenu
+            const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+            const [inquiryHall, setInquiryHall] = useState('');
+            const { info, properties, addOnItems, bbqMenu } = WEBSITE_DATA;
 
-            useEffect(() => {
-                if (window.lucide) window.lucide.createIcons();
-            }, [activeTab]);
+            useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [activeTab]);
 
-            const navigateTo = (tab) => {
-                setActiveTab(tab);
-                setIsMenuOpen(false);
-                window.scrollTo(0, 0);
-            };
-
-            const openInquiry = (hallName) => {
-                setInquiryHall(hallName);
-                setIsInquiryOpen(true);
-            };
-
-            const heroStyle = { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${info.heroImage}')` };
-
-            const LineButton = () => (
-                <a href={info.lineLink} target="_blank" className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#06C755] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-                    <Icon name="phone" className="w-5 h-5" />
-                    <span className="font-bold">詢問空房 / 聯絡管家</span>
-                </a>
-            );
-
-            const Hero = () => (
-                <div className="relative h-screen min-h-[600px] flex items-center justify-center hero-bg text-white px-4" style={heroStyle}>
-                    <div className="max-w-6xl w-full text-center z-10">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-wider">{info.heroTitle}</h1>
-                        <p className="text-xl md:text-2xl mb-12 opacity-90">{info.heroSubtitle}</p>
-                        <div className="bg-white/10 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
-                            <h2 className="text-xl mb-6 font-medium">請問您這次旅行的人數是？</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                                {properties.map((prop) => (
-                                    <button key={prop.id} onClick={() => navigateTo(prop.id)} className="group relative overflow-hidden bg-white text-gray-800 p-6 rounded-xl hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg text-left">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <span className="text-sm font-bold uppercase tracking-wider text-blue-500 group-hover:text-blue-100">{prop.capacity}</span>
-                                            <Icon name={prop.icon} className="w-6 h-6 text-gray-400 group-hover:text-white" />
-                                        </div>
-                                        <h3 className="text-xl font-bold mb-1">{prop.tag}</h3>
-                                        <p className="text-sm text-gray-500 group-hover:text-blue-100">前往 {prop.name} &rarr;</p>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            );
-
-            const PropertyDetail = ({ id }) => {
-                const prop = properties.find(p => p.id === id);
-                if (!prop) return null;
-                return (
-                    <div className="animate-fade-in pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto">
-                        <button onClick={() => navigateTo('home')} className="mb-6 flex items-center text-gray-500 hover:text-blue-600">&larr; 返回首頁</button>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                            <div className="rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
-                                <img src={prop.coverImage} alt={prop.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                            </div>
-                            <div>
-                                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-bold mb-4">{prop.capacity} | {prop.tag}</div>
-                                <h1 className="text-4xl font-bold text-gray-900 mb-2">{prop.name}</h1>
-                                <div className="text-2xl font-bold text-red-500 mb-4">{prop.price}</div>
-                                <p className="text-xl text-blue-600 font-serif italic mb-6">"{prop.slogan}"</p>
-                                <p className="text-gray-600 text-lg leading-relaxed mb-8">{prop.description}</p>
-                                
-                                <div className="grid grid-cols-2 gap-4 mb-8">
-                                    {prop.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-center gap-2 text-gray-700"><div className="w-2 h-2 bg-blue-500 rounded-full"></div>{feature}</div>
-                                    ))}
-                                </div>
-
-                                {prop.calcConfig && prop.calcConfig.enabled && (<PriceCalculator config={prop.calcConfig} />)}
-
-                                {prop.roomTypes && prop.roomTypes.length > 0 && (
-                                    <div className="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-100">
-                                        <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-blue-600" /> 房型與價格總表</h4>
-                                        <div className="space-y-4">
-                                            {prop.roomTypes.map((room, idx) => (
-                                                <div key={idx} className="border-b border-gray-200 pb-4 last:border-0 last:pb-0">
-                                                    <div className="flex justify-between items-center mb-2">
-                                                        <div className="font-bold text-gray-800 text-lg">{room.name}</div>
-                                                        {room.note && <div className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded">{room.note}</div>}
-                                                    </div>
-                                                    {room.offSeason ? (
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                                                            <div className="bg-white p-3 rounded-lg border border-gray-100"><div className="text-gray-500 text-xs mb-1">淡季 ({room.range ? room.range.split('/')[0] : '平日'})</div><div className="font-bold text-gray-700">{room.offSeason}</div></div>
-                                                            <div className="bg-blue-50 p-3 rounded-lg border border-blue-100"><div className="text-blue-500 text-xs mb-1">旺季 ({room.range ? room.range.split('/')[1] : '假日'})</div><div className="font-bold text-blue-700">{room.peakSeason}</div></div>
-                                                        </div>
-                                                    ) : (<div className="font-bold text-red-500 text-right">{room.price}</div>)}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-
-                                <div className="flex gap-4">
-                                    <button onClick={() => openInquiry(prop.name)} className="flex-1 text-center bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg">立即私訊優惠</button>
-                                    <button onClick={() => navigateTo('comparison')} className="px-6 border-2 border-gray-300 text-gray-600 py-4 rounded-xl font-bold hover:border-gray-800 hover:text-gray-800 transition-colors">比較其他房型</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {prop.images && prop.images.length > 0 && (
-                            <div className="mb-16">
-                                <h3 className="text-2xl font-bold mb-6 text-gray-800 border-l-4 border-blue-600 pl-3">空間寫真</h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {prop.images.map((imgUrl, idx) => (
-                                        <div key={idx} className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group cursor-pointer bg-gray-100">
-                                            <img src={imgUrl} alt={`${prop.name} 照片 ${idx+1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                );
-            };
-
-            const ComparisonTable = () => (
-                <div className="pt-24 pb-12 px-4 max-w-7xl mx-auto">
-                    <div className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-900 mb-4">房型比較表</h2></div>
-                    <div className="overflow-x-auto bg-white rounded-3xl shadow-xl border border-gray-100">
-                        <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr className="bg-gray-50 border-b border-gray-200">
-                                    <th className="p-6 text-gray-500 font-medium">比較項目</th>
-                                    {properties.map(p => <th key={p.id} className="p-6 font-bold text-gray-900 text-lg min-w-[150px]">{p.name}<div className="text-sm font-normal text-blue-600 mt-1">{p.capacity}</div></th>)}
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-100">
-                                <tr><td className="p-6 font-bold text-gray-700">適合對象</td>{properties.map(p => <td key={p.id} className="p-6 text-gray-600">{p.tag}</td>)}</tr>
-                                <tr><td className="p-6 font-bold text-gray-700">參考房價</td>{properties.map(p => <td key={p.id} className="p-6 text-red-500 font-bold">{p.price}</td>)}</tr>
-                                
-                                <tr><td className="p-6 font-bold text-gray-700">海景視野</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.view ? <span className="text-green-500 font-bold flex items-center gap-1"><Icon name="check" className="w-4 h-4"/>有</span> : <span className="text-gray-400 flex items-center gap-1"><Icon name="x" className="w-4 h-4"/>無</span>}</td>)}</tr>
-                                <tr><td className="p-6 font-bold text-gray-700">KTV設備</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.ktv ? <span className="text-green-500 font-bold flex items-center gap-1"><Icon name="check" className="w-4 h-4"/>有</span> : <span className="text-gray-400 flex items-center gap-1"><Icon name="x" className="w-4 h-4"/>無</span>}</td>)}</tr>
-                                <tr><td className="p-6 font-bold text-gray-700">戶外烤肉</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.bbq ? <span className="text-green-500 font-bold flex items-center gap-1"><Icon name="check" className="w-4 h-4"/>有</span> : <span className="text-gray-400 flex items-center gap-1"><Icon name="x" className="w-4 h-4"/>無</span>}</td>)}</tr>
-                                <tr><td className="p-6 font-bold text-gray-700">戲水池</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.pool ? <span className="text-green-500 font-bold flex items-center gap-1"><Icon name="check" className="w-4 h-4"/>有</span> : <span className="text-gray-400 flex items-center gap-1"><Icon name="x" className="w-4 h-4"/>無</span>}</td>)}</tr>
-                                <tr><td className="p-6 font-bold text-gray-700">麻將</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.mahjong ? <span className="text-green-500 font-bold flex items-center gap-1"><Icon name="check" className="w-4 h-4"/>有</span> : <span className="text-gray-400 flex items-center gap-1"><Icon name="x" className="w-4 h-4"/>無</span>}</td>)}</tr>
-                                
-                                <tr className="bg-gray-50"><td className="p-6"></td>{properties.map(p => (<td key={p.id} className="p-6"><button onClick={() => navigateTo(p.id)} className="w-full bg-white border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-colors">查看詳情</button></td>))}</tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            );
-
-            // ⬇️ 修改後的加購項目元件 (包含烤肉)
-            const Packages = () => (
-                <div className="pt-24 pb-12 px-4 max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">超值加購項目</h2>
-                        <p className="text-xl text-gray-600">交通、玩樂一次搞定，打造專屬您的完美行程。</p>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-gray-700 mb-6 border-l-4 border-blue-500 pl-3">交通與體驗</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                        {addOnItems.map((item, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all flex items-start gap-4">
-                                <div className="bg-blue-50 p-4 rounded-xl text-blue-600 shrink-0">
-                                    <Icon name={item.icon} className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-gray-800 mb-1">{item.title}</h3>
-                                    <div className="text-lg font-bold text-red-500 mb-2">{item.price} <span className="text-sm text-gray-400 font-normal">{item.unit}</span></div>
-                                    <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <h3 className="text-xl font-bold text-gray-700 mb-6 border-l-4 border-orange-500 pl-3">🔥 民宿內烤肉專區 (需提前預訂)</h3>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-                        {bbqMenu.map((item, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all flex flex-col md:flex-row gap-6">
-                                <div className="bg-orange-50 p-6 rounded-xl text-orange-600 shrink-0 flex items-center justify-center md:w-32">
-                                    <Icon name={item.icon} className="w-12 h-12" />
-                                </div>
-                                <div className="flex-1">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <h3 className="text-xl font-bold text-gray-800">{item.title}</h3>
-                                        <div className="text-lg font-bold text-red-500 whitespace-nowrap">{item.price} <span className="text-sm text-gray-400 font-normal">{item.unit}</span></div>
-                                    </div>
-                                    <p className="text-sm text-gray-600 leading-relaxed bg-gray-50 p-3 rounded-lg">{item.desc}</p>
-                                    <button onClick={() => openInquiry(`預訂：${item.title}`)} className="mt-4 text-sm font-bold text-orange-600 hover:text-orange-800 flex items-center gap-1">
-                                        <Icon name="check" className="w-4 h-4" /> 加入詢問單
-                                    </button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="mt-12 text-center">
-                        <button onClick={() => openInquiry('加購項目詢問')} className="bg-gray-800 text-white px-8 py-3 rounded-full font-bold hover:bg-black transition-colors shadow-lg inline-flex items-center gap-2">
-                            <Icon name="phone" className="w-5 h-5" /> 聯絡管家預訂
-                        </button>
-                    </div>
-                </div>
-            );
+            const navigateTo = (tab) => { setActiveTab(tab); setIsMenuOpen(false); window.scrollTo(0, 0); };
+            const openInquiry = (hallName) => { setInquiryHall(hallName); setIsInquiryOpen(true); };
 
             const Navbar = () => (
-                <nav className="fixed w-full z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-                        <div className="font-bold text-xl cursor-pointer" onClick={() => navigateTo('home')}>{info.brandName}</div>
+                <nav className="fixed w-full z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 h-16 flex items-center">
+                    <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+                        <div className="font-bold text-xl cursor-pointer text-blue-600" onClick={() => navigateTo('home')}>{info.brandName}</div>
                         <div className="hidden md:flex space-x-8">
-                            <button onClick={() => navigateTo('home')} className="text-sm font-medium text-gray-500 hover:text-blue-600">首頁</button>
-                            <button onClick={() => navigateTo('comparison')} className="text-sm font-medium text-gray-500 hover:text-blue-600">房型比較</button>
-                            <button onClick={() => navigateTo('packages')} className="text-sm font-medium text-gray-500 hover:text-blue-600">加購項目</button>
+                            <button onClick={() => navigateTo('home')} className={`text-sm font-medium ${activeTab === 'home' ? 'text-blue-600' : 'text-gray-500'}`}>首頁</button>
+                            <button onClick={() => navigateTo('comparison')} className={`text-sm font-medium ${activeTab === 'comparison' ? 'text-blue-600' : 'text-gray-500'}`}>房型比較</button>
+                            <button onClick={() => navigateTo('packages')} className={`text-sm font-medium ${activeTab === 'packages' ? 'text-blue-600' : 'text-gray-500'}`}>加購項目</button>
                         </div>
-                        {/* 👇 修改後的手機版選單按鈕 (加大、加字、加底色) */}
                         <div className="md:hidden">
-                            <button 
-                                onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                                className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm"
-                            >
+                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full text-gray-800">
                                 <span className="font-bold text-sm">選單</span>
-                                {isMenuOpen ? <Icon name="x" className="w-6 h-6" /> : <Icon name="menu" className="w-6 h-6" />}
+                                {isMenuOpen ? <Icon name="x" className="w-5 h-5" /> : <Icon name="menu" className="w-5 h-5" />}
                             </button>
                         </div>
                     </div>
                     {isMenuOpen && (
-                        <div className="md:hidden bg-white border-t border-gray-100 px-4 pt-4 pb-6 shadow-xl absolute w-full left-0 top-16 h-screen bg-white/95 backdrop-blur-sm animate-fade-in">
+                        <div className="md:hidden bg-white fixed inset-0 top-16 z-50 p-6 animate-fade-in">
                             <div className="flex flex-col gap-4">
-                                <button onClick={() => navigateTo('home')} className="block w-full text-left px-5 py-4 rounded-2xl bg-gray-50 text-lg font-bold text-gray-700 active:bg-blue-50 active:text-blue-600 shadow-sm border border-gray-100">首頁</button>
-                                <button onClick={() => navigateTo('comparison')} className="block w-full text-left px-5 py-4 rounded-2xl bg-gray-50 text-lg font-bold text-gray-700 active:bg-blue-50 active:text-blue-600 shadow-sm border border-gray-100">房型比較</button>
-                                <button onClick={() => navigateTo('packages')} className="block w-full text-left px-5 py-4 rounded-2xl bg-gray-50 text-lg font-bold text-gray-700 active:bg-blue-50 active:text-blue-600 shadow-sm border border-gray-100">加購項目 & 烤肉</button>
+                                <button onClick={() => navigateTo('home')} className="p-4 bg-gray-50 rounded-xl text-lg font-bold text-gray-700 text-left">回首頁</button>
+                                <button onClick={() => navigateTo('comparison')} className="p-4 bg-gray-50 rounded-xl text-lg font-bold text-gray-700 text-left">房型設備比較</button>
+                                <button onClick={() => navigateTo('packages')} className="p-4 bg-gray-50 rounded-xl text-lg font-bold text-gray-700 text-left">加購行程與烤肉</button>
                             </div>
                         </div>
                     )}
                 </nav>
             );
 
-            // Main Render
             return (
-                <div className="min-h-screen flex flex-col">
+                <div className="min-h-screen flex flex-col pt-16">
                     <Navbar />
                     <main className="flex-grow">
-                        {activeTab === 'home' && <Hero />}
                         {activeTab === 'home' && (
-                             <div className="py-20 bg-white">
-                                <div className="max-w-7xl mx-auto px-4 text-center">
-                                    <h2 className="text-3xl font-bold mb-12">為什麼選擇灣琉？</h2>
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                        <div className="p-6"><Icon name="search" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="text-xl font-bold">多樣房型</h3><p className="text-gray-600">2人到36人都能住</p></div>
-                                        <div className="p-6"><Icon name="ship" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="text-xl font-bold">一條龍套裝</h3><p className="text-gray-600">船票機車全包辦</p></div>
-                                        <div className="p-6"><Icon name="home" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="text-xl font-bold">在地管家</h3><p className="text-gray-600">提供最道地玩法</p></div>
-                                        
-                                        {/* 👇 新增的優勢項目 👇 */}
-                                        <div className="p-6"><Icon name="utensils" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="text-xl font-bold">星空 BBQ</h3><p className="text-gray-600">在大自然中享受烤肉</p></div>
-                                        <div className="p-6"><Icon name="key" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="text-xl font-bold">雙人包棟</h3><p className="text-gray-600">2人即可獨享Villa</p></div>
-                                        <div className="p-6"><Icon name="mic" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="text-xl font-bold">專屬 KTV</h3><p className="text-gray-600">盡情歡唱不限時</p></div>
+                            <div className="animate-fade-in">
+                                <div className="min-h-screen flex items-center justify-center text-white relative hero-bg py-24" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${info.heroImage})`}}>
+                                    <div className="text-center px-4 w-full max-w-6xl mx-auto">
+                                        <h1 className="text-3xl md:text-6xl font-bold mb-4">{info.heroTitle}</h1>
+                                        <p className="text-base md:text-xl opacity-90 mb-8">{info.heroSubtitle}</p>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                                            {properties.map(p => (
+                                                <button key={p.id} onClick={() => navigateTo(p.id)} className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-blue-600 transition-all text-left group">
+                                                    <div className="flex justify-between items-start mb-2"><span className="text-xs font-bold text-blue-300 group-hover:text-white uppercase">{p.capacity}</span><Icon name={p.icon} className="w-5 h-5 text-blue-200" /></div>
+                                                    <h3 className="text-xl font-bold mb-1">{p.tag}</h3>
+                                                    <p className="text-sm opacity-70">查看 {p.name} &rarr;</p>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="py-20 bg-white">
+                                    <div className="max-w-7xl mx-auto px-4 text-center">
+                                        <h2 className="text-3xl font-bold mb-12">為什麼選擇灣琉？</h2>
+                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                                            <div className="p-6"><Icon name="ship" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">一條龍套裝</h3></div>
+                                            <div className="p-6"><Icon name="utensils" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">星空 BBQ</h3></div>
+                                            <div className="p-6"><Icon name="key" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">雙人包棟</h3></div>
+                                            <div className="p-6"><Icon name="mic" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">歡唱 KTV</h3></div>
+                                            <div className="p-6"><Icon name="waves" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">海景戲水池</h3></div>
+                                            <div className="p-6"><Icon name="home" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">在地管家</h3></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         )}
-                        {properties.map(p => activeTab === p.id && <PropertyDetail key={p.id} id={p.id} />)}
-                        {activeTab === 'comparison' && <ComparisonTable />}
-                        {activeTab === 'packages' && <Packages />}
+                        {properties.map(p => activeTab === p.id && (
+                            <div key={p.id} className="max-w-7xl mx-auto px-4 py-12 animate-fade-in">
+                                <button onClick={() => navigateTo('home')} className="mb-8 text-gray-500 flex items-center gap-2">&larr; 返回首頁</button>
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                                    <div className="rounded-3xl overflow-hidden shadow-xl h-[400px]"><img src={p.coverImage} className="w-full h-full object-cover" /></div>
+                                    <div>
+                                        <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold mb-4">{p.tag}</div>
+                                        <h1 className="text-4xl font-bold mb-4">{p.name}</h1>
+                                        <p className="text-xl text-blue-600 italic mb-6">"{p.slogan}"</p>
+                                        <p className="text-gray-600 mb-8">{p.description}</p>
+                                        {p.calcConfig.enabled && <PriceCalculator config={p.calcConfig} />}
+                                        <div className="flex gap-4"><button onClick={() => openInquiry(p.name)} className="flex-1 bg-blue-600 text-white py-4 rounded-xl font-bold text-lg">立即私訊優惠</button></div>
+                                    </div>
+                                </div>
+                                {p.images.length > 0 && (
+                                    <div className="mb-12">
+                                        <h3 className="text-2xl font-bold mb-6">空間寫真</h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">{p.images.map((img, i) => <img key={i} src={img} className="rounded-2xl w-full aspect-video object-cover" />)}</div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                        {activeTab === 'comparison' && (
+                            <div className="max-w-7xl mx-auto px-4 py-12">
+                                <h2 className="text-3xl font-bold text-center mb-12">房型設備比較表</h2>
+                                <div className="overflow-x-auto shadow-xl rounded-2xl">
+                                    <table className="w-full bg-white text-left border-collapse min-w-[800px]">
+                                        <thead><tr className="bg-gray-50"><th className="p-6">比較項目</th>{properties.map(p => <th key={p.id} className="p-6">{p.name}</th>)}</tr></thead>
+                                        <tbody className="divide-y">
+                                            <tr><td className="p-6 font-bold">適合人數</td>{properties.map(p => <td key={p.id} className="p-6">{p.capacity}</td>)}</tr>
+                                            <tr><td className="p-6 font-bold">海景</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.view ? '✔' : '✖'}</td>)}</tr>
+                                            <tr><td className="p-6 font-bold">KTV</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.ktv ? '✔' : '✖'}</td>)}</tr>
+                                            <tr><td className="p-6 font-bold">烤肉區</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.bbq ? '✔' : '✖'}</td>)}</tr>
+                                            <tr><td className="p-6 font-bold">戲水池</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.pool ? '✔' : '✖'}</td>)}</tr>
+                                            <tr><td className="p-6 font-bold">麻將</td>{properties.map(p => <td key={p.id} className="p-6">{p.details.mahjong ? '✔' : '✖'}</td>)}</tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        )}
+                        {activeTab === 'packages' && (
+                            <div className="max-w-7xl mx-auto px-4 py-12 animate-fade-in">
+                                <h2 className="text-3xl font-bold text-center mb-12">超值加購項目</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+                                    {addOnItems.map((item, i) => (
+                                        <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border">
+                                            <Icon name={item.icon} className="w-8 h-8 text-blue-600 mb-4" />
+                                            <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                                            <div className="text-red-500 font-bold mb-2">{item.price} <span className="text-xs text-gray-400 font-normal">{item.unit}</span></div>
+                                            <p className="text-sm text-gray-500">{item.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                                <h2 className="text-3xl font-bold text-center mb-12">🔥 民宿內烤肉菜單 (需預訂)</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {bbqMenu.map((item, i) => (
+                                        <div key={i} className="bg-white p-6 rounded-2xl shadow-md border-l-4 border-orange-500">
+                                            <div className="flex justify-between items-start mb-4">
+                                                <h3 className="text-xl font-bold">{item.title}</h3>
+                                                <span className="text-xl font-bold text-red-500">{item.price}</span>
+                                            </div>
+                                            <p className="text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">{item.desc}</p>
+                                            <button onClick={() => openInquiry(item.title)} className="mt-4 text-orange-600 font-bold flex items-center gap-1">加入詢價單 &rarr;</button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </main>
-                    <footer className="bg-gray-900 text-white py-12 px-4 mt-12 text-center">
+                    <footer className="bg-gray-900 text-white py-12 text-center px-4">
                         <h3 className="text-xl font-bold mb-4">{info.brandName}</h3>
-                        <p className="text-gray-400 text-sm">Line: {info.lineId} | 電話: {info.phone}</p>
-                        <p className="text-gray-400 text-sm">{info.address}</p>
+                        <p className="text-gray-400 text-sm mb-2">Line ID: {info.lineId} | 電話: {info.phone}</p>
+                        <p className="text-xs text-gray-600">&copy; 2026 灣琉民宿系列. 版權所有</p>
                     </footer>
-                    <LineButton />
-                    
-                    {/* Inquiry Modal */}
-                    <InquiryModal 
-                        isOpen={isInquiryOpen} 
-                        onClose={() => setIsInquiryOpen(false)} 
-                        lineLink={info.lineLink}
-                        defaultHall={inquiryHall}
-                    />
+                    <a href={info.lineLink} target="_blank" className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#06C755] text-white px-5 py-3 rounded-full shadow-lg"><Icon name="phone" className="w-5 h-5" /><span className="font-bold">聯絡管家</span></a>
+                    <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} lineLink={info.lineLink} defaultHall={inquiryHall} />
                 </div>
             );
         };
