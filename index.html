@@ -56,8 +56,6 @@
                     description: '全區共有 6 棟獨立 Villa，每棟標準 2 人，可加床至 4 人。適合情侶獨享寧靜，也適合多組家庭包場聚會（全區最多容納 24 位），在陽台輕啜紅酒，看著夕陽落下。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/486525181_667291119148595_2559236994243067725_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5uQkWL4_SM8Q7kNvwE6UTy3&_nc_oc=Adl6R2f7jnkjS8-j4l8WUv_jSXSAvUrqSAtdZd6GsF9ctgpavJS53Jecr8i9qDNwlAI&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=816Enhnabf16Te10O8isvw&oh=00_Afs9sUk8cQbWUH-BByStvUOU7aWJE82FXZfPdeyRL16V0A&oe=698EAFE8',
                     features: ['共6棟獨立Villa', '浪漫海景', '獨立陽台', '戶外BBQ', '百坪庭院', '簡易廚房', '海景戲水池'],
-                    
-                    // 一館試算設定
                     calcConfig: {
                         enabled: true, mode: 'multi_unit', basePaxPerUnit: 2, maxPaxPerUnit: 4, totalUnits: 6,
                         extraPrice: { offSeason: 600, peakSeason: 800 },    
@@ -128,7 +126,7 @@
                     price: 'NT$ 9,000 起',
                     icon: 'home',
                     slogan: '關上門，這裡就是你們在島上的第二個家。',
-                    description: '專為重視隱私的家族設計。擁有獨立的庭院可以烤肉，像回到老家一樣放鬆，提供三房一廳一庭園的空間與好友家人盡情地歡唱、烤肉BBQ、打麻將。',
+                    description: '專為重視隱私的家族設計。擁有獨立的庭院可以烤肉，像回到老家一樣放鬆。',
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/622740630_904425528768485_762830311926185488_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S-0Fgo25ntMQ7kNvwH_t_4P&_nc_oc=AdmReMrKnJZwuVtdGlU9h3yglJ6VaDEKwW6DqLtkK-HcCA0HaSFcf5Ij1cDTyh9LUd4&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=ZhN08o8eIh3N9w444azU2Q&oh=00_Afv8q7eV3Zl0hhC-V5U4ixM4N3ou3A3LxMVJI0V1YWBSww&oe=698EA80D',
                     features: ['獨立庭院', '可烤肉', '溫馨客廳', '隱私包棟', '三房一廳一庭院', '歡唱KTV', '麻將空間'],
                     
@@ -169,7 +167,17 @@
                     coverImage: 'https://scontent.fkhh6-1.fna.fbcdn.net/v/t39.30808-6/497823835_122136432470405577_8457257598022893280_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=S1frGKFRZrYQ7kNvwHNj2j-&_nc_oc=AdnZiV08MPAtPne-kj0ao-bqMYjkZ399s9aVE1EcNMeUTx0SHLsJzqlWDOX4RLX0hbk&_nc_zt=23&_nc_ht=scontent.fkhh6-1.fna&_nc_gid=NxXjt8tRhD1uAqMDJAMZ8w&oh=00_AfvCWS4a_QYjQ8fuoZA19jFl4cMWLAyBcnvZUakEgd8RGg&oe=698E99D0',
                     features: ['超大交誼廳', '高CP值', '24床位', '適合畢旅', '歡唱KTV', '多間衛浴'],
                     
-              
+                    // 躺躺試算設定 (恢復)
+                    calcConfig: {
+                        enabled: true, mode: 'single_unit', basePax: 1, maxPax: 24,
+                        extraPrice: { offSeason: 800, peakSeason: 1000 },    
+                        seasons: {
+                            off_weekday: { label: '淡季平日 (11-3月 週一~五)', price: 800 },
+                            off_holiday: { label: '淡季假日 (11-3月 週六~日)', price: 1000 },
+                            peak_weekday: { label: '旺季平日 (4-10月 週一~五)', price: 900 },
+                            peak_holiday: { label: '旺季假日 (4-10月 週六~日)', price: 1100 }
+                        }
+                    },
                     roomTypes: [
                         { name: '單人床位', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $600 / 假日 $800', peakSeason: '平日 $800 / 假日 $1,000', note: '含個人置物櫃' },
                         { name: '小包棟 (8至14床)', range: '淡季(11-3月) / 旺季(4-10月)', offSeason: '平日 $6,000 / 假日 $8,000', peakSeason: '平日 $10,000 / 假日 $12,000', note: '好友獨享大空間' },
@@ -206,28 +214,28 @@
                     price: "NT$ 2,200",
                     unit: "/組",
                     icon: "utensils",
-                    desc: "(含瓦斯烤肉爐)、穀飼牛肉串(6入)、紐澳羊肉串(6入)、雞腿肉串(6入)、雞里肌串(6入)、脆皮肥腸串(6入)、三層豬肉串(6入)、阿根廷大魷魚(4入)、手工飛魚卵丸串(6入) (含烤肉醬、胡椒鹽)"
+                    desc: "穀飼牛肉串(6入)、紐澳羊肉串(6入)、雞腿肉串(6入)、雞里肌串(6入)、脆皮肥腸串(6入)、三層豬肉串(6入)、阿根廷大魷魚(4入)、手工飛魚卵丸串(6入) (含烤肉醬、胡椒鹽)"
                 },
                 {
                     title: "3-4人份 豬肉套餐",
                     price: "NT$ 2,200",
                     unit: "/組",
                     icon: "utensils",
-                    desc: "(含瓦斯烤肉爐)、手工香腸(6入)、梅花豬肉串(6入)、脆皮肥腸串(6入)、豬五花肉片(250g)、酒製豬燒肉(230g)、舒肥味噌松阪豬(250g)、舒肥蒜香鹹豬肉(290g)、黑蜜厚切豬里肌(5片) (含烤肉醬、胡椒鹽)"
+                    desc: "手工香腸(6入)、梅花豬肉串(6入)、脆皮肥腸串(6入)、豬五花肉片(250g)、酒製豬燒肉(230g)、舒肥味噌松阪豬(250g)、舒肥蒜香鹹豬肉(290g)、黑蜜厚切豬里肌(5片) (含烤肉醬、胡椒鹽)"
                 },
                 {
                     title: "3-4人份 牛肉套餐",
                     price: "NT$ 2,400",
                     unit: "/組",
                     icon: "utensils",
-                    desc: "(含瓦斯烤肉爐)、穀飼牛肋串(6入)、紐約客牛肉串(6入)、手打牛肉丸串(6入)、韓式牛肉盤(230g)、切塊香料骰子牛(200g)、美國雪花牛肉片(300g)、美國帶骨牛小排(250g)、香料板腱牛排(200g) (含烤肉醬、胡椒鹽)"
+                    desc: "穀飼牛肋串(6入)、紐約客牛肉串(6入)、手打牛肉丸串(6入)、韓式牛肉盤(230g)、切塊香料骰子牛(200g)、美國雪花牛肉片(300g)、美國帶骨牛小排(250g)、香料板腱牛排(200g) (含烤肉醬、胡椒鹽)"
                 },
                 {
                     title: "3-4人份 海鮮套餐",
                     price: "NT$ 2,800",
                     unit: "/組",
                     icon: "anchor",
-                    desc: "(含瓦斯烤肉爐)、船凍冰鮮透抽(3入)、台灣白蝦(600g)、薄鹽鯖魚片(160g)、香料海鮮盤(250g)、半殼大扇貝(1000g)、日本宮城生蠔(800g)、宜蘭抱卵母香魚(2入)、阿根廷大魷魚串(4入) (含烤肉醬、胡椒鹽)"
+                    desc: "船凍冰鮮透抽(3入)、台灣白蝦(600g)、薄鹽鯖魚片(160g)、香料海鮮盤(250g)、半殼大扇貝(1000g)、日本宮城生蠔(800g)、宜蘭抱卵母香魚(2入)、阿根廷大魷魚串(4入) (含烤肉醬、胡椒鹽)"
                 },
                 {
                     title: "租借瓦斯烤肉爐",
@@ -497,6 +505,34 @@
                                             <div className="p-6"><Icon name="mic" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">歡唱 KTV</h3></div>
                                             <div className="p-6"><Icon name="waves" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">海景戲水池</h3></div>
                                             <div className="p-6"><Icon name="home" className="w-12 h-12 text-blue-600 mx-auto mb-4"/><h3 className="font-bold">在地管家</h3></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="py-20 bg-gray-50">
+                                    <div className="max-w-7xl mx-auto px-4 text-center">
+                                        <h2 className="text-3xl font-bold mb-12 text-slate-800">簡單 3 步驟，輕鬆預訂</h2>
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                            <div className="relative p-8 bg-white rounded-2xl shadow-sm border border-slate-100">
+                                                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                                                <div className="mt-6">
+                                                    <h3 className="text-xl font-bold mb-2 text-slate-800">選擇館別</h3>
+                                                    <p className="text-slate-600">依照您的人數與需求，點擊上方按鈕選擇最適合的館別。</p>
+                                                </div>
+                                            </div>
+                                            <div className="relative p-8 bg-white rounded-2xl shadow-sm border border-slate-100">
+                                                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                                                <div className="mt-6">
+                                                    <h3 className="text-xl font-bold mb-2 text-slate-800">填寫需求</h3>
+                                                    <p className="text-slate-600">點擊「立即私訊優惠」，填寫日期與人數，系統自動產生詢問單。</p>
+                                                </div>
+                                            </div>
+                                            <div className="relative p-8 bg-white rounded-2xl shadow-sm border border-slate-100">
+                                                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                                                <div className="mt-6">
+                                                    <h3 className="text-xl font-bold mb-2 text-slate-800">管家確認</h3>
+                                                    <p className="text-slate-600">自動跳轉至 Line 貼上需求，管家將為您確認空房與報價。</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
